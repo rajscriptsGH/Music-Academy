@@ -38,7 +38,7 @@ export const MenuItem = ({
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ type: "spring", duration: 0.3 }}
                 >
-                    {active === item && (
+                    {active === item && children && (
                         <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
                             <motion.div
                                 transition={{ type: "spring", duration: 0.3 }}
@@ -113,7 +113,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
     return (
         <a
             {...rest}
-            className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+            className="text-neutral-700 dark:text-neutral-200 hover:text-blue-400 "
         >
             {children}
         </a>
