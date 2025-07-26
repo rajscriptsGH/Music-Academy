@@ -2,9 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 import { Transition } from "framer-motion";
-const transition = {
+const transition: Transition = {
     type: "spring",
     mass: 0.5,
     damping: 11.5,
@@ -36,12 +35,12 @@ export const MenuItem = ({
                 <motion.div
                     initial={{ opacity: 0, scale: 0.85, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ type: "spring", duration: 0.3 }}
+                    transition={transition}
                 >
                     {active === item && children && (
                         <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
                             <motion.div
-                                transition={{ type: "spring", duration: 0.3 }}
+                                transition={transition}
                                 layoutId="active" // layoutId ensures smooth animation
                                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
                             >
@@ -111,11 +110,12 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
     return (
-        <a
+        <span
             {...rest}
-            className="text-neutral-700 dark:text-neutral-200 hover:text-blue-400 "
+            className="text-neutral-700 dark:text-neutral-200 hover:text-blue-400 cursor-pointer"
         >
             {children}
-        </a>
+        </span>
     );
 };
+
