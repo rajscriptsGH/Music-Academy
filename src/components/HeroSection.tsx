@@ -11,17 +11,17 @@ const HeroSection = () => {
                 fill="white"
             />
 
-            <div className='relative flex justify-center items-center flex-col text-center p-4 z-10'>
+            <div className='relative flex justify-center items-center flex-col text-center p-4 z-10 mt-20'>
 
                 <h1
                     className="mt-20 md:mt-0 text-4xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400"
                 >Master the art of music
                 </h1>
                 <p
-                    className="mt-4 font-normal text-base md:text-lg text-neutral-300 max-w-64 md:max-w-[500px] lg:max-w-[600px] mx-auto"
+                    className="mt-4  font-normal text-base md:text-lg text-neutral-300 max-w-64 md:max-w-[500px] lg:max-w-[600px] mx-auto"
                 >Dive into our comprehensive music courses and transform your musical journey today. Whether you're a beginner or looking to refine your skills, join us to unlock your true potential.
                 </p>
-                <div className="mt-4">
+                <div className="mt-10">
                     <Link href={"/courses"}>
                         <Button
                             borderRadius="1.75rem"
