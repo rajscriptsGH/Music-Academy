@@ -8,6 +8,8 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,5 +39,14 @@ body {
 @layer utilities {
   .animate-spotlight {
     animation: spotlight 2s ease 0.75s 1 forwards;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
