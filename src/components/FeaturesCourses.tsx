@@ -23,7 +23,7 @@ const FeaturesCourses = () => {
     return (
         <div className='bg-slate-900 px-5 py-12'>
             <div>
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center mb-5">
                     <h2 className='text-blue-700 font-semibold'>FEATURED COURSES</h2>
                     <h1 className='font-bold text-4xl md:text-5xl leading-8 mt-2'>Learn With the Best</h1>
                 </div>
@@ -42,7 +42,7 @@ const FeaturesCourses = () => {
                                     <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">{course.description}</p>
                                     <Link
                                         className='bg-white text-black px-3 py-2 mt-5  rounded-md hover:bg-green-400 transition-all duration-300'
-                                        href={`/course/ ${course.slug}`}>
+                                        href={`// ${course.slug}`}>
                                         Learn More
                                     </Link>
                                 </div>
@@ -52,7 +52,7 @@ const FeaturesCourses = () => {
                 </div>
             </div>
             <div className='mt-20 text-center'>
-                <Link href={'/course'}
+                <Link href={'/'}
                     className='bg-white text-black px-4 py-3 rounded-md hover:bg-green-400 transition-all duration-300'
                 >
                     View All Courses
