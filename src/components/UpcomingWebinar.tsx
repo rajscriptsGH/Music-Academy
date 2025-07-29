@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import React from 'react'
 import { HoverEffect } from "./ui/card-hover-effect";
-import { title } from 'process';
 
 const featuredWebinars = [
     {
