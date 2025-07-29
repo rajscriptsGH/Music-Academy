@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { HoverEffect } from "./ui/card-hover-effect";
+import { title } from 'process';
 
 const featuredWebinars = [
     {
@@ -60,8 +61,12 @@ const UpcomingWebinar = () => {
                 </div>
                 <div className='mt-7'>
                     <HoverEffect
-                        //@ts-ignore
-                        items={featuredWebinars}
+                        items={featuredWebinars.map((webinar) => ({
+                            title: webinar.title,
+                            description: webinar.description,
+                            link: webinar.slug
+                        }))}
+
                     />
                 </div>
                 <div className='mt-5 text-center'>
