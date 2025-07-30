@@ -9,9 +9,9 @@ export default function ThreeDCardDemo() {
     return (
         <div className="min-h-screen bg-black py-12 pt-40">
             <h1 className="text-center text-6xl font-semibold">Our All Courses ({courseData.courses.length})</h1>
-            <div className="flex flex-wrap justify-center">
-                {courseData.courses.map((course) => (
-                    <CardContainer className="inter-var">
+            <div className="flex flex-wrap gap-5 p-5">
+                {courseData.courses.map((course, idx) => (
+                    <CardContainer key={idx} className="inter-var">
                         <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                             <CardItem
                                 translateZ="50"
@@ -29,8 +29,6 @@ export default function ThreeDCardDemo() {
                             <CardItem translateZ="100" className="w-full mt-4">
                                 <img
                                     src={course.image}
-                                    height="1000"
-                                    width="1000"
                                     className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                                     alt={course.title}
                                 />
@@ -40,7 +38,7 @@ export default function ThreeDCardDemo() {
                                     translateZ={20}
                                     as="a"
                                     href="https://twitter.com/mannupaaji"
-                                    target="__blank"
+                                    target="_blank"
                                     className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                                 >
                                     Try now →
