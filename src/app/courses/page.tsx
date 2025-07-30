@@ -28,11 +28,14 @@ export default function ThreeDCardDemo() {
                                 {course.description}
                             </CardItem>
                             <CardItem translateZ="100" className="w-full mt-4">
-                                <Image
-                                    src={course.image}
-                                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                                    alt={course.title}
-                                />
+                                <div className="relative h-60 w-full rounded-xl overflow-hidden">
+                                    <Image
+                                        src={course.image}
+                                        fill
+                                        className="object-cover group-hover/card:shadow-xl"
+                                        alt={course.title}
+                                    />
+                                </div>
                             </CardItem>
                             <div className="flex justify-between items-center mt-20">
                                 <CardItem
