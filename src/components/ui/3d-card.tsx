@@ -9,7 +9,6 @@ import React, {
     useEffect,
 } from "react";
 
-// Create context to track mouse enter state
 const MouseEnterContext = createContext<
     [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
