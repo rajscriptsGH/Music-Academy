@@ -19,7 +19,7 @@ const HeroSection = () => {
                 </h1>
                 <p
                     className="mt-4  font-normal text-base md:text-lg text-neutral-300 max-w-64 md:max-w-[500px] lg:max-w-[600px] mx-auto"
-                >Dive into our comprehensive music courses and transform your musical journey today. Whether you're a beginner or looking to refine your skills, join us to unlock your true potential.
+                >Dive into our comprehensive music courses and transform your musical journey today. Whether you are a beginner or looking to refine your skills, join us to unlock your true potential.
                 </p>
                 <div className="mt-10">
                     <Link href={"/courses"}>

@@ -1,10 +1,10 @@
 'use client'
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { Meteors } from "@/components/ui/meteors";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 
-export default function () {
+const Contact = () => {
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
 
@@ -24,6 +24,7 @@ export default function () {
             in your musical journey.
         </p>
         <form
+            onSubmit={handleSubmit}
             className=" p-12 flex flex-col z-20" action="handleSubmit">
             <input
                 type="email"
@@ -52,3 +53,5 @@ export default function () {
 
     </div>
 }
+
+export default Contact;
