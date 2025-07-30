@@ -1,5 +1,5 @@
 'use client'
-export default function () {
+export default function Footer() {
     return <footer className=" p-6 bg-slate-900 text-slate-400 ">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8">
             <div className="lg:ml-10">

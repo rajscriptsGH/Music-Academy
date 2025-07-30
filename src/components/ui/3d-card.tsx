@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
 import React, {
     createContext,
     useState,
@@ -10,6 +9,7 @@ import React, {
     useEffect,
 } from "react";
 
+// Create context to track mouse enter state
 const MouseEnterContext = createContext<
     [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
@@ -25,9 +25,14 @@ export const CardContainer = ({
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMouseEntered, setIsMouseEntered] = useState(false);
+    const [isClient, setIsClient] = useState(false); // ✅ Detect client-only rendering
+
+    useEffect(() => {
+        setIsClient(true); // ✅ This runs only in the browser
+    }, []);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!containerRef.current) return;
+        if (!isClient || !containerRef.current) return;
         const { left, top, width, height } =
             containerRef.current.getBoundingClientRect();
         const x = (e.clientX - left - width / 2) / 25;
@@ -35,16 +40,16 @@ export const CardContainer = ({
         containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
     };
 
-    const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseEnter = () => {
         setIsMouseEntered(true);
-        if (!containerRef.current) return;
     };
 
-    const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseLeave = () => {
         if (!containerRef.current) return;
         setIsMouseEntered(false);
         containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
     };
+
     return (
         <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
             <div
@@ -86,7 +91,7 @@ export const CardBody = ({
     return (
         <div
             className={cn(
-                "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+                "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
                 className
             )}
         >
@@ -145,7 +150,6 @@ export const CardItem = ({
     );
 };
 
-// Create a hook to use the context
 export const useMouseEnter = () => {
     const context = useContext(MouseEnterContext);
     if (context === undefined) {

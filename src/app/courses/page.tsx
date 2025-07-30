@@ -4,6 +4,7 @@
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import courseData from '@/data/music_courses.json'
+import Image from "next/image";
 
 export default function ThreeDCardDemo() {
     return (
@@ -27,7 +28,7 @@ export default function ThreeDCardDemo() {
                                 {course.description}
                             </CardItem>
                             <CardItem translateZ="100" className="w-full mt-4">
-                                <img
+                                <Image
                                     src={course.image}
                                     className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                                     alt={course.title}

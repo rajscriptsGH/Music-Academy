@@ -1,5 +1,5 @@
 'use client'
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { Meteors } from "@/components/ui/meteors";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 

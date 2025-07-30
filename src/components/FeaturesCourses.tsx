@@ -2,7 +2,6 @@
 import React from 'react'
 import courseData from '../data/music_courses.json'
 import Link from 'next/link'
-import { div, h1, p } from 'motion/react-client';
 import { BackgroundGradient } from './ui/background-gradient';
 
 interface Course {
@@ -15,7 +14,7 @@ interface Course {
     isFeatured: boolean;
 }
 
-const FeaturesCourses = () => {
+export default function FeaturesCourses() {
     const featuredCourses = courseData.courses.filter((course: Course) => (
         course.isFeatured
     ))
@@ -62,4 +61,4 @@ const FeaturesCourses = () => {
     )
 }
 
-export default FeaturesCourses
+
